@@ -1,0 +1,75 @@
+/* OraclePage.css */
+
+/* 기본 레이아웃 스타일 */
+.oracle-page {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px;
+  }
+  
+  .oracle-card {
+    width: 100%;
+  }
+  
+  .upload-container {
+    border: 2px dashed #d1d5db;
+    border-radius: 8px;
+    padding: 24px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.3s;
+  }
+  
+  .upload-container:hover {
+    border-color: #9ca3af;
+  }
+  
+  .upload-label {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  
+  .file-status {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #6b7280;
+  }
+  
+  .file-selected {
+    color: #16a34a;
+  }
+  
+  .download-button {
+    width: 40px;
+    height: 40px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+  }
+  
+  .download-button:hover {
+    background-color: #4b5563;
+  }
+  
+  .file-icon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .parsed-result {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .result-textarea {
+    height: 160px;
+    resize: none;
+    font-size: 14px;
+  }
+  
