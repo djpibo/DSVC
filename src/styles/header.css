@@ -1,0 +1,54 @@
+/* 헤더 스타일 */
+.header {
+    background-color: #1e293b; /* 다크 블루 */
+    color: white;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar {
+    @apply bg-white shadow-md border-b border-gray-200;
+  }
+  
+  .navbar-container {
+    @apply container mx-auto px-4 py-3 flex justify-between items-center;
+  }
+  
+  .navbar-logo {
+    @apply text-xl font-bold text-gray-800;
+  }
+  
+  .navbar-menu {
+    @apply flex space-x-4;
+  }
+
+  .navbar-item {
+    @apply px-4 py-2 rounded-md text-sm font-medium transition-all text-gray-700 hover:bg-gray-100;
+  }
+  
+  .navbar-item.active {
+    @apply bg-gray-700 text-white;
+  }
+  
+  .nav-menu li {
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.3s, border-bottom 0.3s;
+  }
+  
+  .nav-menu li a {
+    text-decoration: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-bottom: 2px solid transparent;
+  }
+  
+  .nav-menu li.active a {
+    border-bottom: 2px solid #38bdf8; /* 활성화된 탭 색상 */
+  }
+  
+  .nav-menu li:hover a {
+    color: #38bdf8; /* 호버 색상 */
+  }
+  

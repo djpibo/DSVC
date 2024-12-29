@@ -1,0 +1,273 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.flex {
+  display: flex;
+}
+
+
+/* 전체 레이아웃 */
+
+.main-container {
+  @apply flex flex-col items-center justify-center min-h-screen bg-black text-center;
+}
+  
+
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+
+/* 제목 스타일 */
+.main-title {
+  @apply text-4xl md:text-6xl font-extrabold text-white mb-8;
+}
+
+/* 버튼 그룹 */
+.button-group {
+  @apply flex flex-col md:flex-row gap-6;
+}
+
+/* 공통 버튼 스타일 */
+.button {
+  @apply w-60 px-6 py-4 text-white font-semibold rounded-lg shadow-md transition duration-300 ease-in-out;
+}
+
+@layer utilities {
+  .oracle-button {
+    @apply bg-oracleRed hover:bg-red-600;
+  }
+
+  .mysql-button {
+    @apply bg-mysqlBlue hover:bg-blue-700;
+  }
+}
+
+/* 이미지 버튼 스타일 */
+.button-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer; /* 마우스가 올라갈 때 손가락 모양 */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* 부드러운 애니메이션 */
+}
+
+.button-image:hover {
+  transform: scale(1.05); /* 호버 시 이미지 크기 확대 */
+  opacity: 0.8; /* 호버 시 투명도 변화 */
+}
+
+.button-image:active {
+  transform: scale(0.95); /* 클릭 시 이미지 크기 축소 */
+}
+
+/* 네비게이션 바 스타일 */
+.navbar {
+  background-color: #1e293b;
+  color: white;
+  padding: 10px 20px;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu li {
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.nav-menu li:hover {
+  background-color: #334155;
+}
+
+.nav-menu .active {
+  background-color: #475569;
+}
+
+.nav-item {
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-item:hover {
+  background-color: #555;
+}
+
+.nav-item.active {
+  background-color: #ff5733; /* 선택된 메뉴 강조색 */
+  color: white;
+}
+
+/* 콘텐츠 영역 스타일 */
+.content {
+  padding: 40px;
+  text-align: center;
+}
+
+.content-tab {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.content-tab h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.content-tab p {
+  font-size: 16px;
+  color: #666;
+}
+
+/* 메인 콘텐츠 영역 */
+.content-area {
+  flex: 1;
+  padding: 20px;
+  overflow-y: aut
+  o;
+}
+
+/* Section Title 스타일 */
+.section-title {
+  font-size: 2rem; /* 제목의 크기 */
+  font-weight: bold; /* 굵게 */
+  text-align: center; /* 중앙 정렬 */
+  margin: 2rem 0; /* 위아래 여백 */
+  padding-bottom: 0.5rem; /* 아래쪽 여백 */
+  border-bottom: 2px solid #e2e8f0; /* 하단 라인 */
+  color: #FFFFFF; /* 글자 색상 */
+  text-transform: uppercase; /* 대문자 변환 */
+  letter-spacing: 0.05em; /* 글자 간격 */
+  position: relative; /* 아이콘이나 추가 효과를 위한 포지션 */
+}
+
+
+/* Oracle 페이지 레이아웃 */
+.oracle-container {
+  display: flex;
+  gap: 20px;
+  height: 100%;
+}
+
+.upload-section,
+.result-section {
+  @apply w-full md:w-1/2;
+}
+
+.upload-dropzone {
+  @apply border-2 border-dashed border-gray-300 rounded-lg p-6 text-center cursor-pointer hover:border-gray-600 transition;
+}
+
+
+.file-input {
+  border: 1px solid #d1d5db;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.upload-button {
+  background-color: #4f46e5;
+  color: white;
+  padding: 8px 12px;
+  margin: 30px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.upload-button:hover {
+  background-color: #4338ca;
+}
+
+
+.result-area {
+  width: 100%;
+  height: 100%;
+  resize: none;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 224 71.4% 4.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+    --primary: 220.9 39.3% 11%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 220 14.3% 95.9%;
+    --secondary-foreground: 220.9 39.3% 11%;
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+    --accent: 220 14.3% 95.9%;
+    --accent-foreground: 220.9 39.3% 11%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 224 71.4% 4.1%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 20% 98%;
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 20% 98%;
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 210 20% 98%;
+    --primary-foreground: 220.9 39.3% 11%;
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+    --accent: 215 27.9% 16.9%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 216 12.2% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
